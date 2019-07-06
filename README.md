@@ -7,3 +7,6 @@
 * Creates project on github using API 
 * Creates readme file 
 * git add/commit/push
+
+## Inspiration
+https://www.youtube.com/watch?v=7Y8Ppin12r4
