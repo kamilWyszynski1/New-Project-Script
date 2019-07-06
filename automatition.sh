@@ -22,10 +22,10 @@ else
     git init
 fi
 
-python /home/kamil/Projects/ProjectCreator/New-Project-Script/githubAPI.py $name
+python /home/kamil/Projects/New-Project-Script/githubAPI.py $name
 
 echo "# ${name}" > README.md 
-git remote add origin https://github.com/${username}/${name}
+git remote add origin "git@github.com:${username}/${name}"
 
 git add . 
 git commit -m "Readme file"

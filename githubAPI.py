@@ -1,8 +1,9 @@
 import requests
 import sys
+import os
 
-TOKEN = "f3e0454e1696cc4f4f75a5498a09b222a5917d9d"
-
+TOKEN = os.environ['TOKEN']
+print(TOKEN)
 data = {
     "name": sys.argv[1]
 }
@@ -12,3 +13,4 @@ r = requests.post(
     json=data,
     headers={"Authorization":"Bearer "+TOKEN}
 )
+print(r)
