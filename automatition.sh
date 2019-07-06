@@ -3,6 +3,7 @@
 
 name=$1
 dir=$2
+username=`git config --global user.name`
 
 echo $name
 echo $dir
@@ -23,7 +24,11 @@ fi
 
 python /home/kamil/Projects/ProjectCreator/New-Project-Script/githubAPI.py $name
 
+echo "# ${name}" > README.md 
+git remote add origin https://github.com/${username}/${name}
 
-
+git add . 
+git commit -m "Readme file"
+git push origin master
 
 
