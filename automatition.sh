@@ -13,14 +13,14 @@ if [ -z "$name" ]; then
 fi
 
 if [ -z "$dir" ]; then
-    mkdir "/home/kamil/Projects/${name}"
-    cd "/home/kamil/Projects/${name}"
-    git init
+    createdDir="/home/kamil/Projects/${name}"
 else
-    mkdir "${dir}/${name}"
-    cd "${dir}/${name}"
-    git init
+    createdDir="${dir}/${name}" 
 fi
+
+mkdir "$createdDir"
+cd "$createdDir"
+git init
 
 python /home/kamil/Projects/New-Project-Script/githubAPI.py $name
 
@@ -30,5 +30,7 @@ git remote add origin "git@github.com:${username}/${name}"
 git add . 
 git commit -m "Readme file"
 git push origin master
+
+xdg-open "$createdDir"
 
 
